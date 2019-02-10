@@ -8,3 +8,11 @@ services:
     volumes:
     - ./node:/home/node
     command: sh -c "npm install && npm run serve"
+  java:
+    image: "maven"
+    ports: 
+    - "2021:4000"
+    working_dir: /usr/src/mymaven
+    volumes:
+    - ./java:/usr/src/mymaven
+    command: mvn spring-boot:run
